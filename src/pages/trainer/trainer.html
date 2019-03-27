@@ -1,0 +1,31 @@
+
+<ion-header>
+
+</ion-header>
+
+<ion-content class="main-view">
+    <div class="modal_content">
+      
+      <div class="container">
+          <ion-row class="user-image">
+       
+            <ion-col text-center>
+              <div class="image">
+                  <img src="../assets/imgs/logo.png"/>
+              </div>
+            </ion-col>
+       
+          </ion-row>
+          <div class="user-profile" *ngFor="let t of trainer">
+            <h5>Trainer: {{t.trainerName}} </h5>
+            <p>Price: ${{t.price}}</p>
+            <p>Phone: {{t.phone}}</p>
+            <p>Email: {{t.email}}</p>
+            <p class="reviews">Rating: {{t.rating}} <ion-icon name="star"></ion-icon></p>
+            </div>
+            <button ion-button (click)="closeTrainerModal()">Close</button>
+    </div>
+
+    
+    </div>
+</ion-content>

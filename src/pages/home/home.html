@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar color="primary" style="max-height: 100%">
+
+      <ion-title>Timeslots</ion-title>
+    </ion-navbar>
+  
+  
+  </ion-header>
+
+<ion-content>
+
+  <ion-toolbar class="toolbar">
+    <ion-buttons start>
+        <button ion-button icon-only (click)="decrement()">
+            <ion-icon name="arrow-dropleft"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title>{{now | date:'EEEE'}}</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="increment()">
+          <ion-icon name="arrow-dropright"></ion-icon>
+        </button>
+    </ion-buttons>
+</ion-toolbar>
+
+ <div class="container" *ngFor="let t of allTimeslots">
+      
+  <div class="trainer-card" *ngIf="getDay() == t.day" (click)="openTrainerModal(t)">
+    <img src="../assets/imgs/cal1.png"/>
+      <div class="card" >
+        <div class="desc">
+            <h2>{{ t.location }}</h2>
+            <p><ion-icon name="navigate"></ion-icon> Distance</p>
+            <p><ion-icon name="md-time"></ion-icon> {{ t.time }}</p>
+           
+        </div>
+  
+      </div>
+
+   
+
+</div>
+</div>
+
+ 
+</ion-content>
